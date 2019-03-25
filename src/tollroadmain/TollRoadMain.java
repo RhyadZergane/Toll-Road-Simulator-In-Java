@@ -83,6 +83,7 @@ public class TollRoadMain
          TollRoad rd = main.initialiseTollRoadFromFile();
          main.simulateFromFile(rd);
          System.out.println("Money made: " + rd.getMoneyMade());
+         rd.getCustomers();
       } 
       catch (FileNotFoundException e) 
       {

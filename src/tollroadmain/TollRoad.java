@@ -37,12 +37,20 @@ public class TollRoad
    public void chargeCustomer(String regNum) throws CustomerNotFoundException, 
            InsufficientAccountBalanceException
    {
+      int counter = 0;
       for(CustomerAccount cus: customers)
       {
          if(cus.getRegNo().equals(regNum))
          {
             moneyMade += cus.makeTrip();
+            counter++;
          }
+      }
+      
+      // Counter that checks if customer account exists
+      if (counter == 0)
+      {
+         throw new CustomerNotFoundException(" CustomerAccount does not exist");
       }
    }
    
